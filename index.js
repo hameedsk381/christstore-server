@@ -2,13 +2,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const dotenv = require('./config/dotenv');
-const corsMiddleware = require('./middlewares/cors');
-const inventoryRoutes = require('./routes/Inventory');
-const orderRoutes = require('./routes/Orders');
+const dotenv = require('./src/config/dotenv.js');
+const corsMiddleware = require('./src/middlewares/cors.js');
+const inventoryRoutes = require('./src/routes/Inventory.js');
+const orderRoutes = require('./src/routes/Orders.js');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const userRoutes = require('./routes/User.js');
+const userRoutes = require('./src/routes/User.js');
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI).then(console.log('mongoose connected'));
 
