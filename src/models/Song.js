@@ -9,6 +9,7 @@ const songSchema = new mongoose.Schema({
   anuvaadam: { type: String, required: true },
   paata: { type: String, required: true },
   fileUrl: { type: String , default : null},
+  category: {type:String ,required: true},
   uploadedAt: { type: Date, default: Date.now }
 });
 
