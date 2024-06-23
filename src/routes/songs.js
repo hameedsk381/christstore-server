@@ -5,7 +5,7 @@ const songsController = require('../controllers/songsController');
 
 
 router.post('/uploadsong', songsController.uploadSong);
-router.get('/', songsController.getSongs);
+router.get('/songs', songsController.getSongs);
 
 
 module.exports = router;
