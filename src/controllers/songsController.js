@@ -3,7 +3,7 @@ const Song = require('../models/Song');
 
 
 exports.uploadSong = async (req, res) => {
-  const { ragaam, taalam, chaaya, rachayitha, anuvaadam, paata ,fileUrl,category } = req.body;
+  const { ragaam, taalam, chaaya, rachayitha, anuvaadam, paata ,fileUrl,category,title } = req.body;
 
 
 
@@ -14,7 +14,7 @@ exports.uploadSong = async (req, res) => {
     chaaya,
     rachayitha,
     anuvaadam,
-    paata,fileUrl,category
+    paata,fileUrl,category,title
   });
 
   try {

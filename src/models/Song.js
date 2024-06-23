@@ -10,6 +10,7 @@ const songSchema = new mongoose.Schema({
   paata: { type: String, required: true },
   fileUrl: { type: String , default : null},
   category: {type:String ,required: true},
+  title: {type:String ,required: true},
   uploadedAt: { type: Date, default: Date.now }
 });
 
