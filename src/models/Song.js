@@ -11,7 +11,7 @@ const songSchema = new mongoose.Schema({
   fileUrl: { type: String , default : null},
   category: {type:String ,required: true},
   title: {type:String ,required: true},
-  songNum: {type:String ,required: true},
+  songNum: {type:String ,required: true,unique:true},
   uploadedAt: { type: Date, default: Date.now }
 });
 
