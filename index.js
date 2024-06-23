@@ -9,6 +9,7 @@ const orderRoutes = require('./src/routes/Orders.js');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const userRoutes = require('./src/routes/User.js');
+const songsRouter = require('./src/routes/songs.js');
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI).then(console.log('mongoose connected'));
 
@@ -22,7 +23,8 @@ app.use(corsMiddleware);
 app.use(inventoryRoutes);
 app.use(orderRoutes);
 app.use(userRoutes);
-// Welcome route
+app.use(songsRouter);
+// // Welcome route
 app.get('/', (req, res) => {
     res.send('Welcome to our website');
 });
