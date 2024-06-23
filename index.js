@@ -6,6 +6,7 @@ const dotenv = require('./src/config/dotenv.js');
 const corsMiddleware = require('./src/middlewares/cors.js');
 const inventoryRoutes = require('./src/routes/Inventory.js');
 const orderRoutes = require('./src/routes/Orders.js');
+const messagesRoutes = require('./src/routes/BibleMessagesRouter.js');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const userRoutes = require('./src/routes/User.js');
@@ -24,6 +25,7 @@ app.use(inventoryRoutes);
 app.use(orderRoutes);
 app.use(userRoutes);
 app.use(songsRouter);
+app.use(messagesRoutes);
 // // Welcome route
 app.get('/', (req, res) => {
     res.send('Welcome to our website');
