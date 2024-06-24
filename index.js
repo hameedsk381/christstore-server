@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 5000;
 const userRoutes = require('./src/routes/User.js');
 const songsRouter = require('./src/routes/songs.js');
 const wordRoutes = require('./src/routes/Word.js');
+const promotionRoutes = require('./src/routes/Promotion.js')
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI).then(console.log('mongoose connected'));
 
@@ -28,6 +29,7 @@ app.use(userRoutes);
 app.use(songsRouter);
 app.use(messagesRoutes);
 app.use(wordRoutes);
+app.use(promotionRoutes);
 // // Welcome route
 app.get('/', (req, res) => {
     res.send('Welcome to our website');
