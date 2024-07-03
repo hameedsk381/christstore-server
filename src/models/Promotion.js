@@ -2,7 +2,8 @@
 const mongoose = require('mongoose');
 
 const promotionSchema = new mongoose.Schema({
-  imageUrl: { type: String, required: true },
+  mobileImageUrl: { type: String, required: true },
+  desktopImageUrl: { type: String, required: true },
   navigateUrl: { type: String, required: true },
 }, { timestamps: true });
 

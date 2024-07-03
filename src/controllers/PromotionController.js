@@ -4,7 +4,6 @@ const Promotion = require('../models/Promotion');
 const getPromotions = async (req, res) => {
   try {
     const promotions = await Promotion.find();
-   
     res.status(200).json(promotions);
   } catch (error) {
     res.status(500).json({ message: 'Failed to fetch promotion data', error });
@@ -12,9 +11,9 @@ const getPromotions = async (req, res) => {
 };
 
 const createPromotion = async (req, res) => {
-  const { imageUrl, navigateUrl } = req.body;
+  const { mobileImageUrl, desktopImageUrl, navigateUrl } = req.body;
   try {
-    const promotion = new Promotion({ imageUrl, navigateUrl });
+    const promotion = new Promotion({ mobileImageUrl, desktopImageUrl, navigateUrl });
     await promotion.save();
     res.status(201).json(promotion);
   } catch (error) {
@@ -24,9 +23,13 @@ const createPromotion = async (req, res) => {
 
 const updatePromotion = async (req, res) => {
   const { id } = req.params;
-  const { imageUrl, navigateUrl } = req.body;
+  const { mobileImageUrl, desktopImageUrl, navigateUrl } = req.body;
   try {
-    const promotion = await Promotion.findByIdAndUpdate(id, { imageUrl, navigateUrl }, { new: true });
+    const promotion = await Promotion.findByIdAndUpdate(
+      id,
+      { mobileImageUrl, desktopImageUrl, navigateUrl },
+      { new: true }
+    );
     if (!promotion) {
       return res.status(404).json({ message: 'Promotion not found' });
     }
