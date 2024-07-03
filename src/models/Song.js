@@ -7,11 +7,12 @@ const songSchema = new mongoose.Schema({
   chaaya: { type: String, required: true },
   rachayitha: { type: String, required: true },
   anuvaadam: { type: String, required: true },
-  paata: { type: String, required: true },
+  paata: { type: String },
   fileUrl: { type: String , default : null},
-  category: {type:String ,required: true},
+  category: {type: String, required: true},
   title: {type:String ,required: true},
-  songNum: {type:String ,required: true,unique:true},
+  songNum: {type:String ,required: true},
+  englishTranslation: {type:String },
   uploadedAt: { type: Date, default: Date.now }
 });
 
